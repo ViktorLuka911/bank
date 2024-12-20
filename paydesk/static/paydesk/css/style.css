@@ -1,0 +1,124 @@
+body {
+    background-image: url('./../img/img_3.jpg');
+	background-size: cover;
+}
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: backdrop-filter 1s ease, -webkit-backdrop-filter 1s ease;
+}
+
+.glass-hover:hover {
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+.my-btn {
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;
+	padding: 0.375rem 0.75rem;
+}
+
+
+.form-control {
+    font-size: 25px
+}
+
+.nav-item {
+    width: 20px;
+    height: 25px;
+}
+
+.user-block {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+
+.nav-item-dropdown {
+    width: 45px;
+    height: 40px;
+}
+
+.nav-item-user {
+    width: 45px;
+    height: 35px;
+}
+
+.currency-menu {
+	width: 200px;
+	padding: 20px;
+}
+
+.currency-menu li {
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+.user-menu {
+	width: 50px;
+	padding: 20px;
+}
+
+.user-menu li {
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+.header-nav {
+	height: 70px;
+	padding: 10px 0 10px 0 !important;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.header-nav ul {
+	margin-top: 15px !important;
+}
+
+.input-group {
+    font-size: 25px;
+    height: 100%;
+}
+
+.list-pages {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+}
+
+.list-pages ul {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	font-size: 25px;
+}
+
+.page-num {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.list-pages a {
+	text-decoration: none;
+	color: white;
+}
+
+.my-card {
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.buttons-item {
+	width: 120px;
+}

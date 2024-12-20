@@ -1,0 +1,14 @@
+{% extends 'paydesk/layout.html' %}
+
+{% block body %}
+<h1 class="display-4 text-center mt-5">{{ header.title }}</h1>
+
+<div class="d-grid mb-3 gap-5 col-6 mx-auto min-vh-50" style="margin-top: 80px">
+    <a href="{% url 'login' %}" type="button" class="my-btn glass glass-hover fs-1 d-flex justify-content-center align-items-center py-5">
+        <span>Увійти</span>
+    </a>
+    <a href="{% url 'register' %}" type="button" class="my-btn glass glass-hover fs-1 d-flex justify-content-center align-items-center py-5">
+        <span>Зареєструватися</span>
+    </a>
+</div>
+{% endblock %}

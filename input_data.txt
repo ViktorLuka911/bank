@@ -1,0 +1,167 @@
+from datetime import date
+from paydesk.models import Person, Account, Credit, Deposit
+
+# Створення особи
+person = Person.objects.create(
+    first_name="Андрій",
+    last_name="Андрійович",
+    birthday=date(1990, 1, 1),
+    itn="1234567890"
+)
+
+# Створення карток для цієї особи
+account_universal = Account.objects.create(
+    card_type="UNIVERSAL",
+    card_number="1111222233334444",
+    pin="1234",
+    cvv="123",
+    amount=1000.0,
+    currency="USD",
+    registration_date=date(2020, 1, 1),
+    valid_until=date(2025, 1, 1),
+    person=person
+)
+
+# Додавання кредиту до універсальної картки
+Credit.objects.create(
+    limit=5000.0,
+    dept=0.0,
+    interest_rate=15.0,
+    account=account_universal
+)
+
+account_debit = Account.objects.create(
+    card_type="DEBIT",
+    card_number="2222333344445555",
+    pin="2345",
+    cvv="234",
+    amount=500.0,
+    currency="USD",
+    registration_date=date(2021, 6, 15),
+    valid_until=date(2026, 6, 15),
+    person=person
+)
+
+account_credit = Account.objects.create(
+    card_type="CREDIT",
+    card_number="3333444455556666",
+    pin="3456",
+    cvv="345",
+    amount=100.0,
+    currency="USD",
+    registration_date=date(2022, 3, 20),
+    valid_until=date(2027, 3, 20),
+    person=person
+)
+
+# Додавання кредиту до кредитної картки
+Credit.objects.create(
+    limit=10000.0,
+    dept=0.0,
+    interest_rate=20.0,
+    account=account_credit
+)
+
+account_savings = Account.objects.create(
+    card_type="SAVINGS",
+    card_number="4444555666777888",
+    pin="4567",
+    cvv="456",
+    amount=2000.0,
+    currency="USD",
+    registration_date=date(2023, 10, 10),
+    valid_until=date(2028, 10, 10),
+    person=person
+)
+
+# Додавання депозиту до ощадної картки
+Deposit.objects.create(
+    amount=3000.0,
+    interest_rate=5.0,
+    account=account_savings
+)
+
+# Додавання нових дебетових карток
+account_debit2 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="5555666677778888",
+    pin="5678",
+    cvv="567",
+    amount=600.0,
+    currency="USD",
+    registration_date=date(2024, 1, 15),
+    valid_until=date(2029, 1, 15),
+    person=person
+)
+
+account_debit3 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="6666777788889999",
+    pin="6789",
+    cvv="678",
+    amount=750.0,
+    currency="USD",
+    registration_date=date(2024, 5, 1),
+    valid_until=date(2029, 5, 1),
+    person=person
+)
+
+account_debit4 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="7777888899990000",
+    pin="7890",
+    cvv="789",
+    amount=900.0,
+    currency="USD",
+    registration_date=date(2024, 7, 10),
+    valid_until=date(2029, 7, 10),
+    person=person
+)
+
+account_debit5 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="8888999900001111",
+    pin="8901",
+    cvv="890",
+    amount=1200.0,
+    currency="USD",
+    registration_date=date(2024, 9, 25),
+    valid_until=date(2029, 9, 25),
+    person=person
+)
+
+account_debit6 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="9999000011112222",
+    pin="9012",
+    cvv="901",
+    amount=1500.0,
+    currency="USD",
+    registration_date=date(2024, 11, 5),
+    valid_until=date(2029, 11, 5),
+    person=person
+)
+
+account_debit7 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="1010101010101010",
+    pin="0123",
+    cvv="012",
+    amount=1100.0,
+    currency="USD",
+    registration_date=date(2024, 12, 10),
+    valid_until=date(2029, 12, 10),
+    person=person
+)
+
+account_debit8 = Account.objects.create(
+    card_type="DEBIT",
+    card_number="1212121212121212",
+    pin="1234",
+    cvv="123",
+    amount=1300.0,
+    currency="USD",
+    registration_date=date(2024, 12, 15),
+    valid_until=date(2029, 12, 15),
+    person=person
+)

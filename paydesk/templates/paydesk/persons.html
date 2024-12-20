@@ -1,0 +1,17 @@
+{% extends 'paydesk/layout.html' %}
+
+{% block body %}
+<div class="d-grid mb-3 gap-2 col-6 mx-auto mt-5">
+    <a href="{% url 'create_person' %}" type="button" class="my-btn glass glass-hover fs-5 text-center">
+        <span><i class="fa-solid fa-plus"></i></span>
+    </a>
+    {% for person in persons %}
+        <a href="{{ person.get_absolute_url }}" type="button" class="my-btn glass glass-hover fs-4 d-flex justify-content-between">
+            <span>{{ person.first_name }} {{ person.last_name }}</span>
+            <span>{{ person.itn }}</span>
+        </a>
+    {% empty %}
+        <span class="fs-2 mt-5 glass rounded px-3 py-2 text-center">Пусто</span>
+    {% endfor %}
+</div>
+{% endblock %}

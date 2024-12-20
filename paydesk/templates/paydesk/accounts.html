@@ -1,0 +1,20 @@
+{% extends 'paydesk/layout.html' %}
+
+{% block body %}
+<div class="d-grid mb-3 gap-2 col-6 mx-auto mt-5">
+    <a href="{% url 'create_account' %}" type="button" class="my-btn glass glass-hover fs-5 text-center">
+        <span><i class="fa-solid fa-plus"></i></span>
+    </a>
+    {% for account in accounts %}
+        <a href="{{ account.get_absolute_url }}" type="button" class="my-btn glass glass-hover fs-4 d-flex">
+            <span style="width: 46%">{{ account.card_number }}</span>
+            <span style="width: 46%">{{ account.get_card_type_display }}</span>
+            <span style="width: 7%">{{ account.currency }}</span>
+
+        </a>
+    {% empty %}
+        <span class="fs-2 mt-5 glass rounded px-3 py-2 text-center">Пусто</span>
+    {% endfor %}    
+</div>
+  
+{% endblock %}
